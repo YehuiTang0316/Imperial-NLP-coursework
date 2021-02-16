@@ -18,7 +18,15 @@ create_dataloader(df)
 to generate dataset for train, val and test.
 
 #### Train and Test
-To train the model, 
+To train the model, use
+```
+train(train_loader, dev_loader, model, epochs, 'bert')
+```
+To see how the model performs at test set, run
+```
+test_loss, test_mse, __, __ = eval(test_loader, model, 'bert')
+print(test_loss, test_mse)
+```
 
 
 ## Part 2
