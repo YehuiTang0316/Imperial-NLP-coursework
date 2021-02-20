@@ -13,11 +13,7 @@ Use ``` get_edited_df(df)``` to replace the headline.
 ### Experiment 2
 In the second experiment we use pretrained bert to do the regression.
 #### Generate Dataloader
-use the function
-```
-create_dataloader(df)
-```
-to generate dataset for train, val and test.
+use the function ``` create_dataloader(df) ``` to generate dataset for train, val and test.
 
 #### Train and Test
 To train the model, use
