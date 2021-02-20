@@ -2,16 +2,10 @@
 Task: to predict how funny the edited headline is
 ## Preparation
 ### Load data
-To obtain data frame for training, validation and test, please first use pandas to load dataset
-```
-df = pd.read_csv('./dataset/xxx.csv')
-```
-, and subsequently 
+To obtain data frame for training, validation and test, please first use pandas to load dataset ``` df = pd.read_csv('./dataset/xxx.csv') ``` .
+
 ### Replace original headline with editted headline
-Use 
-```
-get_edited_df(df)
-```
+Use ``` get_edited_df(df)``` to replace the headline.
 
 ## Part 1
 ### Experiment 1
