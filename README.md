@@ -40,15 +40,16 @@ print(test_loss, test_mse)
 
 ## Part 2
 To train your own word embedding, follow the data pre-processing steps under section 2-1, or load the embedding from our trained model
+You can download our trained model from google drive https://drive.google.com/drive/folders/1W2Uh2z-oolDb-RgJ3942A9pCfcxC11yi?usp=sharing
 ```
 # Load the embedding
-PATH = './w2v_origin.pt'
+PATH = '<YOUR PATH>'
 model = SkipGram(100, len(vocab), device, negative_sampling=True, noise_dist=noise_dist, negative_samples=15).to(device)
 model.load_state_dict(torch.load(PATH))
 embedding = model.embed_input.weight.data
 
 # Load the bi-GRU model
-PATH = './results/bigru-1.pt'
+PATH = '<YOUR PATH>'
 gru_model = GRU(EMBEDDING_DIM, HIDDEN_DIM, INPUT_DIM, BATCH_SIZE, device)
 gru_model.load_state_dict(torch.load(PATH))
 ```
@@ -60,7 +61,7 @@ train(train_loader, dev_loader, gru_model, epochs)
 To test the model, use
 ```
 # Get required dictionary
-w2i = load_dict('./results/w2i-1.pkl')
+w2i = load_dict('<YOUR PATH>')
 
 # Create dataloader
 test_loader = create_gru_dataloader(None, test_df['edited'], None, test_df['meanGrade'], train=False, word2idx=w2i, batch_size=128)
